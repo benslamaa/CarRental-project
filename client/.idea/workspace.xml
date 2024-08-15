@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa1e2aa6-ba72-4e59-ac62-ec734bb87798" name="Changes" comment="" />
+    <list default="true" id="aa1e2aa6-ba72-4e59-ac62-ec734bb87798" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/app/auth/components/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/app/auth/components/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/app/auth/components/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/app/auth/components/signup/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carRental/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/carRental/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +25,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2keTWRB3je9qnzK3oarLK2EZLiE" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -37,6 +49,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\abdu\\Desktop\\GithubProjects\\CarRental-project\\client\\carRental\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -64,7 +77,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723643075252</updated>
-      <workItem from="1723643076455" duration="7159000" />
+      <workItem from="1723643076455" duration="8347000" />
+      <workItem from="1723757836783" duration="5886000" />
     </task>
     <servers />
   </component>

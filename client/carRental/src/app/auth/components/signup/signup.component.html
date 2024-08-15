@@ -1,1 +1,87 @@
-<p>signup works!</p>
+<section class="bg-gray-50 dark:bg-gray-900">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+
+    <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          Create an account
+        </h1>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="space-y-4 md:space-y-6">
+
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <input formControlName="email" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com">
+            <ng-container *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+              <ng-template [ngIf]="registrationForm.get('email')?.errors?.['required']">
+                <p class="text-red-600 dark:text-red-400">Email is required.</p>
+              </ng-template>
+              <ng-template [ngIf]="registrationForm.get('email')?.errors?.['email']">
+                <p class="text-red-600 dark:text-red-400">Invalid email format.</p>
+              </ng-template>
+            </ng-container>
+          </div>
+
+          <div class="relative">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <button type="button" (click)="togglePasswordVisibility()" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400">
+              <svg *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5a7 7 0 00-7 7 7 7 0 007 7 7 7 0 007-7 7 7 0 00-7-7zM12 17a5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5 5 5 0 01-5 5zM12 7a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3z" />
+              </svg>
+              <svg *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12a9 9 0 0118 0 9 9 0 01-18 0zM12 9a3 3 0 100 6 3 3 0 000-6zM1.293 5.293a1 1 0 011.414 0l.707.707A10.965 10.965 0 015 6.8 1.001 1.001 0 015.8 8l1.5 1.5a1 1 0 01-.057 1.415A11.969 11.969 0 015 17a1.001 1.001 0 01-1.707-1.414L4.5 14.8A10.965 10.965 0 014.293 9l.707-.707a1 1 0 010-1.414l-1.5-1.5A1 1 0 014.8 4.293a10.965 10.965 0 011.707-1.707z" />
+              </svg>
+            </button>
+            <ng-container *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+              <ng-template [ngIf]="registrationForm.get('password')?.errors?.['required']">
+                <p class="text-red-600 dark:text-red-400">Password is required.</p>
+              </ng-template>
+              <ng-template [ngIf]="registrationForm.get('password')?.errors?.['minlength']">
+                <p class="text-red-600 dark:text-red-400">Password must be at least 8 characters long.</p>
+              </ng-template>
+            </ng-container>
+          </div>
+
+          <div class="relative">
+            <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+            <input [type]="showConfirmPassword ? 'text' : 'password'" formControlName="confirmPassword" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <button type="button" (click)="toggleConfirmPasswordVisibility()" class="absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 dark:text-gray-400">
+              <svg *ngIf="showConfirmPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5a7 7 0 00-7 7 7 7 0 007 7 7 7 0 007-7 7 7 0 00-7-7zM12 17a5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5 5 5 0 01-5 5zM12 7a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3z" />
+              </svg>
+              <svg *ngIf="!showConfirmPassword" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12a9 9 0 0118 0 9 9 0 01-18 0zM12 9a3 3 0 100 6 3 3 0 000-6zM1.293 5.293a1 1 0 011.414 0l.707.707A10.965 10.965 0 015 6.8 1.001 1.001 0 015.8 8l1.5 1.5a1 1 0 01-.057 1.415A11.969 11.969 0 015 17a1.001 1.001 0 01-1.707-1.414L4.5 14.8A10.965 10.965 0 014.293 9l.707-.707a1 1 0 010-1.414l-1.5-1.5A1 1 0 014.8 4.293a10.965 10.965 0 011.707-1.707z" />
+              </svg>
+            </button>
+            <ng-container *ngIf="registrationForm.errors?.['mismatch'] && registrationForm.get('confirmPassword')?.touched">
+              <p class="text-red-600 dark:text-red-400">Passwords must match.</p>
+            </ng-container>
+          </div>
+
+          <div>
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+            <input formControlName="name" type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name">
+            <ng-container *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+              <ng-template [ngIf]="registrationForm.get('name')?.errors?.['required']">
+                <p class="text-red-600 dark:text-red-400">Name is required.</p>
+              </ng-template>
+            </ng-container>
+          </div>
+
+          <button type="submit"
+                  [disabled]="registrationForm.invalid"
+                  [ngClass]="{
+          'bg-accent text-white hover:bg-primary-700': !registrationForm.invalid,
+          'bg-gray-300 text-gray-600 cursor-not-allowed': registrationForm.invalid
+        }"
+                  class="w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">
+            Create an account
+          </button>
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

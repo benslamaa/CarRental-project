@@ -1,3 +1,14 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+
+<div class="navbar bg-primary-content text-white px-12">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl" routerLink="/" routerLinkActive="active">CarRental</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a routerLink="/register" routerLinkActive="active">Sign Up</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
